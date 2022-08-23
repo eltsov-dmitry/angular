@@ -1,0 +1,62 @@
+@import "variables";
+
+// Reset
+@mixin reset-btn {
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+// Media
+@mixin desktop {
+  @media screen and (min-width: $breakpoint-sm) {
+    @content
+  }
+}
+
+@mixin not-desktop {
+  @media screen and (max-width: $breakpoint-sm - 1) {
+    @content
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm - 1) {
+    @content
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $breakpoint-xs - 1) {
+    @content
+  }
+}
+
+@mixin not-mobile {
+  @media screen and (min-width: $breakpoint-xs) {
+    @content
+  }
+}
+
+// Other
+@mixin hover {
+  @include desktop {
+    &:hover {
+      @content
+    }
+  }
+}
+
+@mixin transition {
+  transition: all $transition-duration ease-in-out;
+}
+
+@mixin image-inner-fluid {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

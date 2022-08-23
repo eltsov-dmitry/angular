@@ -1,0 +1,15 @@
+@import "src/styles/mixins";
+@import "src/styles/colors";
+@import "src/styles/variables";
+
+.app-button {
+  @include reset-btn;
+  padding: 8px 16px;
+  background-color: $teal;
+  color: white;
+  border-radius: $main-radius;
+  @include transition;
+  @include hover {
+    background-color: lighten($teal, 5);
+  }
+}
