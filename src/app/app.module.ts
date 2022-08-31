@@ -11,6 +11,9 @@ import { MainComponent } from './pages/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
+import { InputComponent } from './components/input/input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorFieldsComponent } from './components/error-fields/error-fields.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,11 @@ import { ButtonComponent } from './components/button/button.component';
     HeaderComponent,
     FooterComponent,
     ButtonComponent,
+    InputComponent,
+    ErrorFieldsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

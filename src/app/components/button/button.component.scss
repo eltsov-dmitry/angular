@@ -4,12 +4,17 @@
 
 .app-button {
   @include reset-btn;
-  padding: 8px 16px;
+  padding: 12px 24px;
   background-color: $teal;
   color: white;
-  border-radius: $main-radius;
+  border-radius: $button-radius;
   @include transition;
   @include hover {
     background-color: lighten($teal, 5);
+  }
+  &:disabled {
+    opacity: 0.5;
+    background-color: $grey;
+    cursor: not-allowed;
   }
 }

@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="ui-container">
+    <div class="login-page__wrapper">
+      <h1 class="ui-page-h1">Войти</h1>
+
+      <form
+        *ngIf="loginForm"
+        [formGroup]="loginForm"
+        class="login-page__form"
+        (ngSubmit)="formSubmit()"
+      >
+        <app-input
+          [parentForm]="loginForm"
+          fieldName="email"
+          formControlName="email"
+          type="text"
+        >
+        </app-input>
+        <app-input
+          [parentForm]="loginForm"
+          fieldName="password"
+          formControlName="password"
+          type="password"
+        >
+        </app-input>
+        <app-button [disabled]="loginForm.invalid" (click)="formSubmit()">
+          Отправить
+        </app-button>
+      </form>
+    </div>
+  </div>
+</div>

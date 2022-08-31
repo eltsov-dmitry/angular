@@ -1,0 +1,14 @@
+<div class="app-input">
+  <app-error-fields
+    *ngIf="inputField"
+    [inputField]="inputField"
+  ></app-error-fields>
+  <input
+    #input
+    [value]="value"
+    [disabled]="isDisabled"
+    (input)="changed(input.value)"
+    class="app-input__item"
+    [type]="type"
+  />
+</div>
